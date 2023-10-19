@@ -1,0 +1,45 @@
+/*
+ *
+ * Custom here your css module
+ *
+ */
+
+.MMM-NextCloud-Tasks-Deck-wrapper {
+    color: white;
+    font-size: 15px;
+    line-height: 2rem;
+    text-align: left;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#summary_icon{
+    color: gray;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#summary{
+    color: white;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#sub_summary{
+    color: white;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#date{
+    color: gray;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#tags{
+    color: gray;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper ul li span#description{
+    color: gray;
+}
+
+.MMM-NextCloud-Tasks-Deck-wrapper > ul {
+    padding: 0;
+}
