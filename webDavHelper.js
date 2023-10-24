@@ -7,29 +7,24 @@ function initWebDav(config) {
     return client = createClient(config.listUrl, config.webDavAuth);
 }
 
+function extractWithSummary(obj, elements = []) {
+    if (obj.summary !== undefined) {
+        elements.push(obj);
+    } else {
+        Object.values(obj).forEach(value => {
+            if (typeof value === 'object') {
+                extractWithSummary(value, elements);
+            }
+        });
+    }
+    return elements;
+}
+
 function parseList(icsStrings) {
     let elements = [];
     for (const icsStr of icsStrings) {
         const icsObj = ical.sync.parseICS(icsStr);
-        Object.values(icsObj).forEach(element => {
-            
-            if (element.type === 'VTODO')
-            {
-                //console.log(element);
-                elements.push(element);
-            }
-            else if (element.type === 'VCALENDAR')
-            {
-                Object.values(element).forEach(value => {
-                    if (value.type === 'VTODO')
-                    {
-                        //console.log(value);
-                        elements.push(value);
-                    }
-                });
-            }
-            //elements.push(element);
-        });
+        extractWithSummary(icsObj, elements);
     }
     return elements;
 }
@@ -43,6 +38,7 @@ async function fetchList(config) {
         const icsStr = await client.getFileContents(element.filename, { format: "text" });
         icsStrings.push(icsStr);
     }
+    //console.log(icsStrings);
     return icsStrings;
 }
 
