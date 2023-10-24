@@ -86,11 +86,11 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 			let span_summary = document.createElement("span");
 			span_summary_icon.id = "summary_icon";
 			if (typeof element.children === "undefined") {
-				span_summary_icon.innerHTML = summaryIcon;
+				span_summary_icon.innerHTML = subSummaryIcon;
 				span_summary.id = "summary";
 			}
 			else {
-				span_summary_icon.innerHTML = subSummaryIcon;
+				span_summary_icon.innerHTML = summaryIcon;
 				span_summary.id = "sub_summary";
 			}
 			li.appendChild(span_summary_icon);
