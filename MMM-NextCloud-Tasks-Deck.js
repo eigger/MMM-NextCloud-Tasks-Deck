@@ -112,7 +112,8 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 			if (typeof element.description !== "undefined" && element.description.length > 0) {
 				let span_description = document.createElement("span");
 				span_description.id = "description";
-				span_description.innerHTML = " " + descriptionIcon + element.description;
+				const split = element.description.split("\n");
+				span_description.innerHTML = " " + descriptionIcon + split[0];
 				li.appendChild(span_description);
 			}
 
