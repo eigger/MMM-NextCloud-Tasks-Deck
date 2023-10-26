@@ -75,9 +75,9 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 		let self = this;
 		let summaryIcon = "<span class=\"mdi mdi-menu-down\"></span>";
 		let subSummaryIcon = "<span class=\"mdi mdi-menu-right\"></span>";
-		let dateIcon = "<span class=\"mdi mdi-calendar-range\"></span>";
+		let dateIcon = "<span class=\"mdi mdi-calendar-outline\"></span>";
 		let tagsIcon = "<span class=\"mdi mdi-tag-multiple-outline\"></span>";
-		let descriptionIcon = "<span class=\"mdi mdi-message-reply-text\"></span>";
+		let descriptionIcon = "<span class=\"mdi mdi-card-text-outline\"></span>";
 		let ul = document.createElement("ul");
 		for (const element of children) {
 			let li = document.createElement("li");
