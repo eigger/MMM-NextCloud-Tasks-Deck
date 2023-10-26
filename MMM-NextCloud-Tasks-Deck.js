@@ -73,11 +73,11 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 
 	renderList: function (children) {
 		let self = this;
-		let summaryIcon = "<span class=\"mdi mdi-menu-down\"></span>";
-		let subSummaryIcon = "<span class=\"mdi mdi-menu-right\"></span>";
-		let dateIcon = "<span class=\"mdi mdi-calendar-outline\"></span>";
-		let tagsIcon = "<span class=\"mdi mdi-tag-multiple-outline\"></span>";
-		let descriptionIcon = "<span class=\"mdi mdi-card-text-outline\"></span>";
+		let summaryIcon = "<span class=\"fa fa-fw fa-caret-down\"></span>";
+		let subSummaryIcon = "<span class=\"fa fa-fw fa-caret-right\"></span>";
+		let dateIcon = "<span class=\"fa fa-fw fa-calendar-o\"></span>";
+		let tagsIcon = "<span class=\"fa fa-fw fa-tags\"></span>";
+		let descriptionIcon = "<span class=\"fa fa-fw fa-edit\"></span>";
 		let ul = document.createElement("ul");
 		for (const element of children) {
 			let li = document.createElement("li");
