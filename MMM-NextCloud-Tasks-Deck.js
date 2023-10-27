@@ -10,7 +10,8 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 		updateInterval: 60000,
 		sortMethod: "priority",
 		colorize: false,
-		showListPrefix: false
+		showListPrefix: false,
+		hideList: []
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -80,6 +81,9 @@ Module.register("MMM-NextCloud-Tasks-Deck", {
 		let descriptionIcon = "<span class=\"fa fa-fw fa-edit\"></span>";
 		let ul = document.createElement("ul");
 		for (const element of children) {
+			if (this.config.hideList.includes(element.summary)) {
+				continue;
+			}
 			let li = document.createElement("li");
 			
 			let span_summary_icon = document.createElement("span");
